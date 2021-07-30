@@ -4,6 +4,8 @@ Author: Luyu Liu, The Ohio State University.
 
 As we are witnessing exploding data with larger volume and higher frequency, the ability to visualize large amount of information on an interactive map has never been more crucial. Therefore, web maps are becoming popular for its flexible, open-source, and accessible nature. This workshop will be a professional technical training on web-based geo-visualization for starters. 
 
+Recording: https://www.youtube.com/watch?v=erEuCDacNbE 
+
 ## Software Installation
 
 - [Visual Studio Code](https://code.visualstudio.com/download)
