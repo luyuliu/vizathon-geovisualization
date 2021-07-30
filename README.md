@@ -9,23 +9,23 @@ As we are witnessing exploding data with larger volume and higher frequency, the
 - [Visual Studio Code](https://code.visualstudio.com/download)
 - [GitHub Desktop](https://desktop.github.com/) and a GitHub account which can be created from [here](https://github.com/)
 
-After you register and confirm your GitHub account, we need to fork [this repository](https://github.com/luyuliu/UCGIS-Fullstack-Geovisualization-Workshop) and click on the "fork" button to the right. Now you should have a repository with the same name but under your username, you are the owner of this forked repository. We will do everything in **your own forked repository**. Your own repo's URL should look like `https://github.com/[yourusername]/UCGIS-Fullstack-Geovisualization-Workshop`
+You can choose to create your own repository with the same name, or, you can fork [this repository](https://github.com/luyuliu/vizathon-geovisualization) and click on the "fork" button to the right. Now you should have a repository with the same name but under your username, you are the owner of this forked repository. We will do everything in **your own forked repository**. Your own repo's URL should look like `https://github.com/[yourusername]/vizathon-geovisualization`
 
 After forking your repo, go to GitHub Desktop and log in with your credential. We will need to add your repo to your local machine. To do this:
 - Click on *file* in the banner menu.
 - Click *clone repository*.
-- Find the repo `UCGIS-Fullstack-Geovisualization-Workshop` in the list, or, search in the search bar.
+- Find the repo `vizathon-geovisualization` in the list, or, search in the search bar.
 - Specify the location. You can also just leave to the default.
 - Click *clone* button. Then the software will clone your repo to the local disk.
 - The GitHub Desktop will ask you *"how are you planning to use this fork?"*. You should answer *"For my own purposes"*.
 
-We also need to set up your **GitHub page**. Go to your own repo's URL (should look like `https://github.com/[insert your username]/UCGIS-Fullstack-Geovisualization-Workshop/settings/pages`). You should see the GitHub Pages setting. If not, you can also go to the main page of your repo and click *"Settings"* and go to "*Pages*". 
+We also need to set up your **GitHub page**. Go to your own repo's URL (should look like `https://github.com/[insert your username]/vizathon-geovisualization/settings/pages`). You should see the GitHub Pages setting. If not, you can also go to the main page of your repo and click *"Settings"* and go to "*Pages*". 
 
 Now under "*Source*", choose branch as main, and click "*Save*" button.
 
 A few minutes later, you should be able to access the content in your repo. For example, try the two things below:
-- You can try to download the UFO witness data with a URL like this `https://[insert your username].github.io/UCGIS-Fullstack-Geovisualization-Workshop/data/UFO.geojson`. Your browser should be able to download as a file.
-- You can try to access `https://[insert your username].github.io/UCGIS-Fullstack-Geovisualization-Workshop/demo/` to try a demo map I made. We will host your final product in a similar manner.
+- You can try to download the UFO witness data with a URL like this `https://[insert your username].github.io/vizathon-geovisualization/data/UFO.geojson`. Your browser should be able to download as a file.
+- You can try to access `https://[insert your username].github.io/vizathon-geovisualization/demo/` to try a demo map I made. We will host your final product in a similar manner.
 
 
 
@@ -36,7 +36,7 @@ You can first open your GitHub Desktop and choose your cloned repo. Click on *"O
 ## Create files
 ### Create HTML
 First, we would like to create a new empty HTML file. To do this, we need to do:
-- First, open the *explorer* sidebar in VSCode. You should be seeing several sections such as *"OPEN EDITORS"* and *the name of the folder you just set* ( if set default, it will be *"UCGIS-FULLSTACK-GEOVISUALIZATION-WORKSHOP"*). 
+- First, open the *explorer* sidebar in VSCode. You should be seeing several sections such as *"OPEN EDITORS"* and *the name of the folder you just set* ( if set default, it will be *"vizathon-geovisualization"*). 
 - Find the *code* folder under the second section, right click on the *code* folder and select *new file*. An input will show for you to enter the name of the new file.
 - Type in *"index.html"*. You should see the file showing up in the sidebar. 
 
@@ -73,7 +73,10 @@ An HTML also holds the responsibilities of adding JavaScript and CSS libraries a
 
 
 ### Populate the head section
-Then we will first populate the head section. First, we will need to set some metadata for the webpage. Copy the code bolow in the `<head>` section.
+
+You should already have the head section ready, but I will still show how I set up the environment. Remember, you can always reuse these parts later if you want to start another project.
+
+We will first populate the head section. First, we will need to set some metadata for the webpage. Copy the code bolow in the `<head>` section.
 
 ```html
 <title>First Web-map by [insert your name]</title>
@@ -225,7 +228,7 @@ Only the circle is kind of special if you noticed. `L.circle` has three paramete
 
 There are more options available that you can change; check [here](https://leafletjs.com/reference-1.7.1.html#circle) to see the documentation.
 
-## Adding a geoJSON layer
+## Adding a geoJSON layer (Extra content)
 
 Clearly, it is not sustainable to add every symbology manually or direcly in the JS code. We will need a more efficient way to add data. geoJSON is a very readable (relatively) and accessible geodata format. It is essentially a [JSON file](https://en.wikipedia.org/wiki/JSON) but for geographic information; therefore, you can directly visualize it in most (especially open-source) GIS software.
 
@@ -235,21 +238,21 @@ First let's talk about data. I already prepared a point geoJSON in the */data* f
 However, a local dataset is not accessible for online users. We will need move this local dataset to online so that our website can use this. Also remember that [**CORS restrition**](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) that will not allow us to access to a different domain, so we will need host the dataset in our own domain, which is the same domain where we will host our website. Thankfully, GitHub page is a good choice for it satisfies all of these requirements and it is free.
 
 ### Setting your GitHub page
-If you have not done this, you should go to your own repo's URL (should look like `https://github.com/[insert your username]/UCGIS-Fullstack-Geovisualization-Workshop/settings/pages`). You should see the GitHub Pages setting. If not, you can also go to the main page of your repo and click *"Settings"* and go to "*Pages*". 
+If you have not done this, you should go to your own repo's URL (should look like `https://github.com/[insert your username]/vizathon-geovisualization/settings/pages`). You should see the GitHub Pages setting. If not, you can also go to the main page of your repo and click *"Settings"* and go to "*Pages*". 
 
 Now under "*Source*", choose branch as main, and click "*Save*" button.
 
 A few minutes later, you should be able to access the content in your repo. For example, try the two things below:
-- You can try to download the UFO witness data with a URL like this `https://[insert your username].github.io/UCGIS-Fullstack-Geovisualization-Workshop/data/UFO.geojson`. Your browser should be able to download as a file.
-- You can try to access `https://[insert your username].github.io/UCGIS-Fullstack-Geovisualization-Workshop/demo/` to try a demo map I made. We will host your final product in a similar manner.
+- You can try to download the UFO witness data with a URL like this `https://[insert your username].github.io/vizathon-geovisualization/data/UFO.geojson`. Your browser should be able to download as a file.
+- You can try to access `https://[insert your username].github.io/vizathon-geovisualization/demo/` to try a demo map I made. We will host your final product in a similar manner.
 
-You can access your dataset by using `https://[insert your username].github.io/UCGIS-Fullstack-Geovisualization-Workshop/data/UFO.geojson`
+You can access your dataset by using `https://[insert your username].github.io/vizathon-geovisualization/data/UFO.geojson`
 
 ### Using your data
 Since you hosted the data in your repo, you can use it! Add this code to your main.js file.
 
 ```javascript
-$.get("https://luyuliu.github.io/UCGIS-Fullstack-Geovisualization-Workshop/data/UFO.geojson", visualize_geojson)
+$.get("https://luyuliu.github.io/vizathon-geovisualization/data/UFO.geojson", visualize_geojson)
 
 function visualize_geojson(data) {
     L.geoJSON(data, {
@@ -292,7 +295,7 @@ The last part defines the `convert_point_to_symbol` function.
 
 Now, save your code and refresh your webpage, you should be able to see a lot of UFO witness (orange points) on your map!
 
-## Add an Click Event
+## Add an Click Event (Extra content)
 
 We talked about JS can act and react; so here we want to use try the reaction feature. A very convenient feature is to show a popup about the location you click on. How to do this? Try following code:
 
@@ -326,7 +329,7 @@ Now since we have a working local version of your website, you can now push the 
 To do this, go to GitHub Desktop and you will find that you will find you are making a lot of changes compared to the original version of the GitHub repo, which you just cloned from mine. There are two steps you need to do:
 - Commit your changes. In the sidebar you will see there are several changed files and there are two empty things you need to fill in: Summary and Description (optional). Summary basically tell the future yourself about what this change is for. Therefore, it is recommended that you write down: Finish the Frontend part. Of course, you can write down anything! Then, click *commit to main* to commit the changes. 
 - And then, click on **push origin** to push your committed changes online
-- Wait several minutes and visit `https://[yourusername].github.io/UCGIS-Fullstack-Geovisualization-Workshop/code` to see your final product. You are now officially online!
+- Wait several minutes and visit `https://[yourusername].github.io/vizathon-geovisualization/code` to see your final product. You are now officially online!
 
 ## Conclusion
-This is the end of the frontend part. You should be able to reproduce the same webmap I have in here:  `https://luyuliu.github.io/UCGIS-Fullstack-Geovisualization-Workshop/demo`. Ask anything!
+This is the end of the frontend part. You should be able to reproduce the same webmap I have in here:  `https://luyuliu.github.io/vizathon-geovisualization/demo`. Ask anything!
