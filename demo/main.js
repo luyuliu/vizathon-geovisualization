@@ -8,7 +8,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     zoomOffset: -1
 }).addTo(mymap);
 
-L.marker([41, -100]).addTo(mymap).bindPopup("<a href='https://www.google.com'>Hello world!</a><br />I am an alone popup.").openPopup();
+L.marker([41, -100]).addTo(mymap).bindPopup("<a href='https://www.google.com'>Hello world!</a><br />I am an alone popup.'<img src="https://static.pexels.com/photos/189349/pexels-photo-189349.jpeg' height="150px" width="150px"/>').openPopup();
 
 L.circle([42, -90], 50000, {
     color: 'red',
@@ -21,3 +21,7 @@ L.polygon([
     [51.503, -85],
     [40, -75]
 ]).addTo(mymap).bindPopup("I am an alone polygon.");
+
+
+
+adfasdfadfa
